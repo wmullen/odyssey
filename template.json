@@ -1,0 +1,102 @@
+{
+    "Actor": {
+        "types": ["character", "npc", "threat"],
+        "templates": {
+            "background": {
+                "name": "",
+                "biography": ""
+            },
+            "attributes": {
+                "harm": {
+                    "min": 0,
+                    "value": 0,
+                    "max": 10
+                }
+            },
+            "stats": {
+                "might": {
+                    "min": -5,
+                    "value": -5,
+                    "max": 5
+                },
+                "finesse": {
+                    "min": -5,
+                    "value": -5,
+                    "max": 5
+                },
+                "mind": {
+                    "min": -5,
+                    "value": -5,
+                    "max": 5
+                },
+                "charm": {
+                    "min": -5,
+                    "value": -5,
+                    "max": 5
+                }
+            },
+            "themebook": {
+                "themebookName": "",
+                "focus": "",
+                "basicMove": "",
+                "abilities": ""
+            },
+            "signature": {
+                "sourceThemebook": "",
+                "ongoing": "",
+                "active": "",
+                "frequency": "",
+                "drawback": ""
+            }
+        },
+        "character": {
+            "templates": ["background", "attributes", "stats"],
+            "themebook1": {
+                "templates": ["themebook"]
+            },
+            "themebook2": {
+                "templates": ["themebook"]
+            },
+            "themebook3": {
+                "templates": ["themebook"]
+            },
+            "themebook4": {
+                "templates": ["themebook"]
+            },
+            "signature": {
+                "sourceThemebook": "",
+                "ongoing": "",
+                "active": "",
+                "frequency": "",
+                "drawback": ""
+            }
+        },
+        "npc": {
+            "templates": ["background", "attributes"]
+        },
+        "threat": {
+            "templates": ["background", "attributes"],
+            "level": "minor"
+        }
+    },
+    "Item": {
+        "types": ["regular", "special", "core"],
+        "templates": {
+            "itemAttributes": {
+                "name": "",
+                "description": "",
+                "mechanics": "",
+                "restrictions": ""
+            }
+        },
+        "regular": {
+            "templates": ["itemAttributes"]
+        },
+        "special": {
+            "templates": ["itemAttributes"]
+        },
+        "core": {
+            "templates": ["itemAttributes"]
+        }
+    }
+}
