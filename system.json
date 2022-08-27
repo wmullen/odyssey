@@ -3,22 +3,15 @@
     "title": "Odyssey",
     "description": "An implementation of the Odyssey role-playing game.",
     "version": "0.1.0",
-    "authors": [
-        {
-            "name": "William Mullen"
-        }
-    ],
-    "scripts": [],
-    "esmodules": [],
-    "styles": [],
-    "packs": [],
-    "languages": [],
+    "authors": "William Mullen",
+
     "socket": true,
-    "initiative": "1d20",
     "gridDistance": 5,
     "gridUnits": "ft",
     "primaryTokenAttribute": "attributes.harm",
-    "secondaryTokenAttribute": "resources.power",
+    "secondaryTokenAttribute": null,
+    "minimumCoreVersion": "9.245",
+    "compatibleCoreVersion": "9",
     "url": "https://github.com/wmullen/odyssey",
-    "manifest": "https://github.com/wmullen/odyssey/system.json"
+    "manifest": "https://raw.githubusercontent.com/wmullen/odyssey/main/system.json"
 }
