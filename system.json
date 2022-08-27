@@ -1,11 +1,21 @@
 {
-    "id": "odyssey",
+    "name": "odyssey",
     "title": "Odyssey",
     "description": "An implementation of the Odyssey role-playing game.",
     "version": "0.1.0",
     "minimumCoreVersion": "0.8.9",
     "compatibleCoreVersion": "9",
     "author": "William Mullen",
+    "esmodules": [],
+    "styles": [],
+    "packs": [],
+    "languages": [
+      {
+        "lang": "en",
+        "name": "English",
+        "path": "lang/en.json"
+      }
+    ],
     "socket": true,
     "gridDistance": 5,
     "gridUnits": "ft",
