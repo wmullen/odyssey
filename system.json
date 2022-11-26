@@ -1,11 +1,18 @@
 {
     "name": "odyssey",
     "title": "Odyssey",
-    "description": "An implementation of the Odyssey role-playing game.",
+    "description": "The Odyssey role-playing system for FoundryVTT.",
     "version": "0.1.0",
-    "minimumCoreVersion": "0.8.9",
-    "compatibleCoreVersion": "9",
-    "author": "William Mullen",
+
+    "compatibility": {
+      "minimum": "10",
+      "verified": "10"
+    },
+    "authors": [
+      {
+        "name": "William Mullen"
+      }
+    ],
     "esmodules": [],
     "styles": [],
     "packs": [],
@@ -21,5 +28,6 @@
     "gridUnits": "ft",
     "primaryTokenAttribute": "attributes.harm",
     "secondaryTokenAttribute": null,
+    "url": "https://github.com/wmullen/odyssey",
     "manifest": "https://raw.githubusercontent.com/wmullen/odyssey/main/system.json"
 }

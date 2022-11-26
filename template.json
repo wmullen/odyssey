@@ -8,6 +8,7 @@
             },
             "attributes": {
                 "harm": {
+                    "label": "Harm",
                     "min": 0,
                     "value": 0,
                     "max": 10
@@ -15,21 +16,25 @@
             },
             "stats": {
                 "might": {
+                    "label": "Might",
                     "min": -5,
                     "value": -5,
                     "max": 5
                 },
                 "finesse": {
+                    "label": "Finesse",
                     "min": -5,
                     "value": -5,
                     "max": 5
                 },
                 "mind": {
+                    "label": "Mind",
                     "min": -5,
                     "value": -5,
                     "max": 5
                 },
                 "charm": {
+                    "label": "Charm",
                     "min": -5,
                     "value": -5,
                     "max": 5
@@ -47,6 +52,24 @@
                 "active": "",
                 "frequency": "",
                 "drawback": ""
+            },
+            "level": {
+                "value": "",
+                "label": "Minor",
+                "levels": {
+                    "minor": {
+                        "label": "Minor",
+                        "dtype": "String"
+                    },
+                    "major": {
+                        "label": "Major",
+                        "dtype": "String"
+                    },
+                    "boss": {
+                        "label": "Boss",
+                        "dtype": "String"
+                    }
+                }
             }
         },
         "character": {
@@ -72,31 +95,45 @@
             }
         },
         "npc": {
-            "templates": ["background", "attributes"]
+            "templates": ["background", "attributes", "level"]
         },
         "threat": {
-            "templates": ["background", "attributes"],
-            "level": "minor"
+            "templates": ["background", "attributes", "level"]
         }
     },
     "Item": {
-        "types": ["regular", "special", "core"],
+        "types": ["item", "other"],
         "templates": {
             "itemAttributes": {
                 "name": "",
                 "description": "",
                 "mechanics": "",
                 "restrictions": ""
+            },
+            "level": {
+                "value": "",
+                "label": "Common",
+                "levels": {
+                    "minor": {
+                        "label": "Common",
+                        "dtype": "String"
+                    },
+                    "major": {
+                        "label": "Special",
+                        "dtype": "String"
+                    },
+                    "boss": {
+                        "label": "Core",
+                        "dtype": "String"
+                    }
+                }
             }
         },
-        "regular": {
-            "templates": ["itemAttributes"]
+        "item": {
+            "templates": ["itemAttributes", "level"]
         },
-        "special": {
-            "templates": ["itemAttributes"]
-        },
-        "core": {
-            "templates": ["itemAttributes"]
+        "other": {
+            "templates": ["itemAttributes", "level"]
         }
     }
 }
