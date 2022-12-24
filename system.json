@@ -13,7 +13,7 @@
         "name": "William Mullen"
       }
     ],
-    "esmodules": ["module/simple.js"],
+    "esmodules": ["module/odyssey.js"],
     "styles": [],
     "packs": [],
     "languages": [
