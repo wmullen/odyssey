@@ -9,12 +9,12 @@
             </h1>
             <div class="harm">
                 <label class="harm-label">Harm: </label>
-                <input type="text" name="data.attribute.harm.value" value="{{data.attribute.harm.value}}" data-dtype="Number"/>
+                <input type="text" name="data.attributes.harm.value" value="{{data.attributes.harm.value}}" data-dtype="Number"/>
                 <span> / </span>
-                <input type="text" name="data.attribute.health.max" value="{{data.attribute.harm.max}}" data-dtype="Number"/>
+                <input type="text" name="data.attributes.health.max" value="{{data.attributes.harm.max}}" data-dtype="Number"/>
             </div>
             <div class="stats">
-                {{#each actor.data.stats as |stat key|}}
+                {{#each data.stats as |stat key|}}
                 <li class="stat flexrow" data-skill="{{key}}">
                     <span class="stat-label flexrow" name="data.stats.{{key}}.label">{{label}}</span>
                     <div class="stat-editbox flexrow">
