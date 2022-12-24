@@ -16,13 +16,7 @@
     "esmodules": [],
     "styles": [],
     "packs": [],
-    "languages": [
-      {
-        "lang": "en",
-        "name": "English",
-        "path": "lang/en.json"
-      }
-    ],
+    "languages": [],
     "socket": true,
     "gridDistance": 5,
     "gridUnits": "ft",
