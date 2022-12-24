@@ -12,32 +12,32 @@
                     "min": 0,
                     "value": 0,
                     "max": 10
-                }
-            },
-            "stats": {
-                "might": {
-                    "label": "Might",
-                    "min": -5,
-                    "value": -5,
-                    "max": 5
                 },
-                "finesse": {
-                    "label": "Finesse",
-                    "min": -5,
-                    "value": -5,
-                    "max": 5
-                },
-                "mind": {
-                    "label": "Mind",
-                    "min": -5,
-                    "value": -5,
-                    "max": 5
-                },
-                "charm": {
-                    "label": "Charm",
-                    "min": -5,
-                    "value": -5,
-                    "max": 5
+                "stats": {
+                    "might": {
+                        "label": "Might",
+                        "min": -5,
+                        "value": -5,
+                        "max": 5
+                    },
+                    "finesse": {
+                        "label": "Finesse",
+                        "min": -5,
+                        "value": -5,
+                        "max": 5
+                    },
+                    "mind": {
+                        "label": "Mind",
+                        "min": -5,
+                        "value": -5,
+                        "max": 5
+                    },
+                    "charm": {
+                        "label": "Charm",
+                        "min": -5,
+                        "value": -5,
+                        "max": 5
+                    }
                 }
             },
             "themebook": {
