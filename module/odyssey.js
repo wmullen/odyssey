@@ -1,12 +1,12 @@
 // // Import document classes.
-import { OdysseyActor } from "./actor.mjs";
-// import { BoilerplateItem } from "./documents/item.mjs";
+import { OdysseyActor } from "./actor.js";
+// import { BoilerplateItem } from "./documents/item.js";
 // // Import sheet classes.
-import { OdysseyActorSheet } from "./actor-sheet.mjs";
-// import { BoilerplateItemSheet } from "./sheets/item-sheet.mjs";
+import { OdysseyActorSheet } from "./actor-sheet.js";
+// import { BoilerplateItemSheet } from "./sheets/item-sheet.js";
 // // Import helper/utility classes and constants.
-// import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
-// import { BOILERPLATE } from "./helpers/config.mjs";
+// import { preloadHandlebarsTemplates } from "./helpers/templates.js";
+// import { BOILERPLATE } from "./helpers/config.js";
 
 
 /* -------------------------------------------- */
