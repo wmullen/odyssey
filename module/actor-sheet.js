@@ -23,8 +23,6 @@
     /** @override */
   getData() {
     const data = super.getData();
-    EntitySheetHelper.getAttributeData(data);
-    data.shorthand = !!game.settings.get("worldbuilding", "macroShorthand");
     return data;
   }
 }
