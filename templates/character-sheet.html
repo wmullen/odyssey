@@ -28,23 +28,23 @@
 
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="biography">Biography</a>
         <a class="item" data-tab="themebooks">Themebooks</a>
+        <a class="item" data-tab="biography">Biography</a>
         <a class="item" data-tab="items">Items</a>
     </nav>
 
     {{!-- Sheet Body --}}
     <section class="sheet-body">
+        {{!-- Themebooks Tab --}}
+        <div class="tab themebooks" data-group="primary" data-tab="themebooks">
+            <!-- TODO -->
+        </div>
 
         {{!-- Biography Tab --}}
         <div class="tab biography" data-group="primary" data-tab="biography">
             {{editor content=data.background.biography target="data.background.biography" button=true owner=owner editable=editable}}
         </div>
 
-        {{!-- Abilities Tab --}}
-        <div class="tab themebooks" data-group="primary" data-tab="themebooks">
-            <!-- TODO -->
-        </div>
 
         <!-- TODO Rewrite -->
         {{!-- Items Tab --}}
