@@ -46,13 +46,6 @@
                 "basicMove": "",
                 "abilities": ""
             },
-            "signature": {
-                "sourceThemebook": "",
-                "ongoing": "",
-                "active": "",
-                "frequency": "",
-                "drawback": ""
-            },
             "level": {
                 "value": "",
                 "label": "Minor",
@@ -73,7 +66,7 @@
             }
         },
         "character": {
-            "templates": ["background", "attributes", "stats"],
+            "templates": ["background", "attributes"],
             "themebook1": {
                 "templates": ["themebook"]
             },
