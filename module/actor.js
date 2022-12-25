@@ -32,7 +32,9 @@
       const actorData = this;
       const systemData = actorData.system;
       const flags = actorData.flags.odyssey || {};
-
+      
+      console.log("Testing testing 1 2 3");
+      console.log(actor.system.attributes.harm);
   
       // Make separate methods for each Actor type (character, npc, etc.) to keep
       // things organized.
