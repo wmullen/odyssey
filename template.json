@@ -3,7 +3,6 @@
         "types": ["character", "npc", "threat"],
         "templates": {
             "background": {
-                "name": "",
                 "biography": ""
             },
             "attributes": {
@@ -40,12 +39,6 @@
                     }
                 }
             },
-            "themebook": {
-                "themebookName": "Test",
-                "focus": "",
-                "basicMove": "",
-                "abilities": ""
-            },
             "level": {
                 "value": "",
                 "label": "Minor",
@@ -68,16 +61,28 @@
         "character": {
             "templates": ["background", "attributes"],
             "themebook1": {
-                "templates": ["themebook"]
+                "themebookName": "Test",
+                "focus": "",
+                "basicMove": "",
+                "abilities": ""
             },
             "themebook2": {
-                "templates": ["themebook"]
+                "themebookName": "Test",
+                "focus": "",
+                "basicMove": "",
+                "abilities": ""
             },
             "themebook3": {
-                "templates": ["themebook"]
+                "themebookName": "Test",
+                "focus": "",
+                "basicMove": "",
+                "abilities": ""
             },
             "themebook4": {
-                "templates": ["themebook"]
+                "themebookName": "Test",
+                "focus": "",
+                "basicMove": "",
+                "abilities": ""
             },
             "signature": {
                 "sourceThemebook": "",
