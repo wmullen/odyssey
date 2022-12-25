@@ -29,29 +29,31 @@
     const context = super.getData();
 
     // Use a safe clone of the actor data for further operations.
-    const systemData = context.actor.system;
+    const actorData = this.actor.toObject(false);
 
     // Add the actor's data to context.data for easier access, as well as flags.
-    context.data = systemData.data;
-    context.flags = systemData.flags;
+    context.system = actorData.system;
+    context.flags = actorData.flags;
 
-    // // Prepare character data and items.
-    // if (actorData.type == 'character') {
-    //   this._prepareItems(context);
-    //   this._prepareCharacterData(context);
-    // }
-
-    // // Prepare NPC data and items.
-    // if (actorData.type == 'npc') {
-    //   this._prepareItems(context);
-    // }
-
-    // // Add roll data for TinyMCE editors.
-    // context.rollData = context.actor.getRollData();
-
-    // // Prepare active effects
-    // context.effects = prepareActiveEffectCategories(this.actor.effects);
+    // Prepare character data and items.
+    if (actorData.type == 'character') {
+      this._prepareCharacterData(context);
+    }
 
     return context;
+  }
+
+  /**
+   * Organize and classify Items for Character sheets.
+   *
+   * @param {Object} actorData The actor to prepare.
+   *
+   * @return {undefined}
+   */
+  _prepareCharacterData(context) {
+    // Handle ability scores.
+    for (let [k, v] of Object.entries(context.system.stats)) {
+      v.label = game.i18n.localize(CONFIG.BOILERPLATE.abilities[k]) ?? k;
+    }
   }
 }
