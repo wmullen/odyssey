@@ -1,9 +1,8 @@
 {
-    "name": "odyssey",
+    "id": "odyssey",
     "title": "Odyssey",
     "description": "The Odyssey role-playing system for FoundryVTT.",
     "version": "0.1.2",
-
     "compatibility": {
       "minimum": "10",
       "verified": "10"

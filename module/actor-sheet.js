@@ -20,9 +20,5 @@
   //   return `systems/boilerplate/templates/actor/actor-${this.actor.data.type}-sheet.html`;
   // }
 
-    /** @override */
-  getData() {
-    const data = super.getData();
-    return data;
-  }
+
 }

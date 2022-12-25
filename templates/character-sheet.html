@@ -9,11 +9,11 @@
             </h1>
             <div class="harm">
                 <label class="harm-label">Harm: </label>
-                <input type="text" name="system.harm.value" value="{{system.harm.value}}" data-dtype="Number"/>
+                <input type="text" name="harm.value" value="{{harm.value}}" data-dtype="Number"/>
                 <span> / </span>
-                <input type="text" name="system.harm.max" value="{{system.harm.max}}" data-dtype="Number"/>
+                <input type="text" name="harm.max" value="{{harm.max}}" data-dtype="Number"/>
             </div>
-            <div class="stats">
+            <!-- <div class="stats">
                 {{#each data.stats as |stat key|}}
                 <li class="stat flexrow" data-skill="{{key}}">
                     <span class="stat-label flexrow" name="data.stats.{{key}}.label">{{label}}</span>
@@ -22,7 +22,7 @@
                     </div>
                 </li>
                 {{/each}}
-            </div>
+            </div> -->
         </div>
     </header>
 
