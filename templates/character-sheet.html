@@ -9,20 +9,20 @@
             </h1>
             <div class="harm">
                 <label class="harm-label">Harm: </label>
-                <input type="number" name="system.harm.value" value="{{system.harm.value}}" data-dtype="Number"/>
+                <input type="number" name="system.harm.value" value="{{system.harm.value}}"/>
                 <span> / </span>
-                <input type="text" name="system.harm.max" value="{{system.harm.max}}" data-dtype="Number"/>
+                <input type="number" name="system.harm.max" value="{{system.harm.max}}"/>
             </div>
-            <!-- <div class="stats">
-                {{#each data.stats as |stat key|}}
+            <div class="stats">
+                {{#each system.stats as |stat key|}}
                 <li class="stat flexrow" data-skill="{{key}}">
-                    <span class="stat-label flexrow" name="data.stats.{{key}}.label">{{label}}</span>
+                    <span class="stat-label flexrow" name="system.stats.{{key}}.label">{{label}}</span>
                     <div class="stat-editbox flexrow">
-                        <input class="stat-value" type="text" name="data.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number" />
+                        <input class="stat-value" type="number" name="system.stats.{{key}}.value" value="{{stat.value}}" />
                     </div>
                 </li>
                 {{/each}}
-            </div> -->
+            </div>
         </div>
     </header>
 
