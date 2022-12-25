@@ -45,5 +45,5 @@ Hooks.once('init', function() {
     // Items.registerSheet("odyssey", OdysseyItemSheet, { makeDefault: true });
   
     // Preload Handlebars templates.
-    return preloadHandlebarsTemplates();
+    // return preloadHandlebarsTemplates();
   });
