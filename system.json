@@ -4,17 +4,21 @@
     "description": "The Odyssey role-playing system for FoundryVTT.",
     "version": "0.1.2",
     "compatibility": {
-      "minimum": "10",
-      "verified": "10"
+      "minimum": "12",
+      "verified": "12"
     },
     "authors": [
       {
-        "name": "William Mullen"
+        "name": "Raetoria"
       }
     ],
-    "esmodules": ["module/odyssey.js"],
-    "styles": [],
-    "packs": [],
+    "esmodules": ["odyssey.mjs"],
+    "styles": ["styles/system-styles.css"],
+    "packs": [{
+      "name": "chorusthemebooks",
+      "label": "Chorus Themebooks",
+      "type": "Item"
+    }],
     "languages": [
       {
         "lang": "en",
@@ -22,11 +26,26 @@
         "path": "lang/en.json"
       }
     ],
-    "socket": true,
+    "documentTypes": {
+      "Actor": {
+        "playercharacter": { "htmlFields": ["background.biography"] },
+        "npc": { "htmlFields": ["background.biography"] }
+      },
+      "Item": {
+        "equipment": {},
+        "themebook": {}
+      }
+    },
+    "socket": false,
     "gridDistance": 5,
     "gridUnits": "ft",
     "primaryTokenAttribute": "attributes.harm",
     "secondaryTokenAttribute": null,
     "url": "https://github.com/wmullen/odyssey",
-    "manifest": "https://raw.githubusercontent.com/wmullen/odyssey/main/system.json"
+    "manifest": "https://raw.githubusercontent.com/wmullen/odyssey/main/system.json",
+    "download": "//TODO LATER"
 }
+
+
+
+
