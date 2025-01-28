@@ -29,14 +29,14 @@
     const context = super.getData();
 
     // Use a safe clone of the actor data for further operations.
-    const actorData = this.actor.toObject(false);
+    const actorData = context.data;
 
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = actorData.system;
     context.flags = actorData.flags;
 
     // Prepare character data and items.
-    if (actorData.type == 'character') {
+    if (actorData.type == 'playercharacter') {
       this._prepareCharacterData(context);
     }
 

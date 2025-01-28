@@ -1,12 +1,12 @@
-// // Import document classes.
-// import { OdysseyActor } from "./module/actor.js";
-// import { BoilerplateItem } from "./documents/item.js";
-// // Import sheet classes.
-// import { OdysseyActorSheet } from "./module/actor-sheet.js";
-// import { BoilerplateItemSheet } from "./sheets/item-sheet.js";
-// // Import helper/utility classes and constants.
-// import { preloadHandlebarsTemplates } from "./helpers/templates.js";
-// import { BOILERPLATE } from "./helpers/config.js";
+// Import document classes.
+import { OdysseyActor } from "./documents/actor.mjs";
+// import { BoilerplateItem } from "./documents/item.mjs";
+// Import sheet classes.
+import { OdysseyActorSheet } from "./sheets/actor-sheet.mjs";
+// import { BoilerplateItemSheet } from "./sheets/item-sheet.mjs";
+// Import helper/utility classes and constants.
+// import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
+// import { BOILERPLATE } from "./helpers/config.mjs";
 
 
 /* -------------------------------------------- */
@@ -49,11 +49,11 @@
   // });
 
 // import { SystemActor, SystemItem } from "./module/documents.mjs";
-import { PlayeCharacterDataModel, NPCDataModel, ItemDataMode } from "./module/data-models.mjs";
+import { PlayeCharacterDataModel, NPCDataModel, ItemDataModel } from "./module/data-models.mjs";
 
 Hooks.once("init", () => {
   // Configure custom Document implementations.
-  // CONFIG.Actor.documentClass = SystemActor;
+  CONFIG.Actor.documentClass = OdysseyActor;
   // CONFIG.Item.documentClass = SystemItem;
 
   // Configure System Data Models.
@@ -61,9 +61,16 @@ Hooks.once("init", () => {
     playerCharacter: PlayeCharacterDataModel,
     npc: NPCDataModel
   };
-  CONFIG.Item.dataModels = {
-    item: ItemDataMode
-  };
+  // CONFIG.Item.dataModels = {
+  //   item: ItemDataModel
+  // };
+
+  Actors.unregisterSheet('core', ActorSheet);
+  Actors.registerSheet('odyssey', OdysseyActorSheet, {
+    type: ["playercharacter"],
+    makeDefault: true,
+    label: 'ODYSSEY.SheetClassPlayerCharacter',
+  });
 
   // Configure trackable attributes.
   CONFIG.Actor.trackableAttributes = {
