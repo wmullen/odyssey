@@ -8,7 +8,7 @@
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       // classes: ["boilerplate", "sheet", "actor"],
-      template: "systems/odyssey/templates/character-sheet.html",
+      template: "systems/odyssey/templates/character-sheet-temp.html",
       width: 600,
       height: 600,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "themebooks" }]
