@@ -32,7 +32,7 @@
     // context.flags = actorData.flags;
 
     context.enrichedItems = await TextEditor.enrichHTML(
-      this.items,
+      context.system.items,
       {
         relativeTo: this
       }
