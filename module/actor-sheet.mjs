@@ -31,14 +31,12 @@
     // context.system = actorData.system;
     // context.flags = actorData.flags;
 
-    context.items = {
-      field: this.document.system.getField("items"),
-      enriched: await TextEditor.enrichHTML(this.document.system.items, {
-        relativeTo: this.document,
-      }),
-      value: this.document.system.item,
-      height: 200,
-    };
+    context.enrichedItems = await TextEditor.enrichHTML(
+      this.items,
+      {
+        relativeTo: this
+      }
+    );
 
     return context;
   }
