@@ -33,7 +33,7 @@
         </div>
         {{!-- Items Tab --}}
         <div class="tab items" data-group="primary" data-tab="items">
-            {{editor content=system.items target="system.items" button=true editable=editable}}
+            {{ formGroup items.field enriched=items.enriched value=items.value height=items.height }}
         </div>
     </section>
 </form>
