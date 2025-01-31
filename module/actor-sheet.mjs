@@ -16,7 +16,7 @@
 
   /** @override */
   get template() {
-    return `systems/odyssey/templates/character-sheet-temp.html`;
+    return `systems/odyssey/templates/character-sheet.html`;
   }
 
   /** @override */

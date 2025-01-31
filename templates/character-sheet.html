@@ -13,7 +13,7 @@
                 <span> / </span>
                 <input type="number" name="system.harm.max" value="{{system.harm.max}}"/>
             </div>
-            <div class="stats">
+            <!-- <div class="stats">
                 {{#each system.stats as |stat key|}}
                 <li class="stat flexrow" data-skill="{{key}}">
                     <span class="stat-label flexrow" name="system.stats.{{key}}.label">{{label}}</span>
@@ -22,7 +22,7 @@
                     </div>
                 </li>
                 {{/each}}
-            </div>
+            </div> -->
         </div>
     </header>
 
@@ -51,7 +51,7 @@
         <!-- TODO Rewrite -->
         {{!-- Items Tab --}}
         <div class="tab items" data-group="primary" data-tab="items">
-            <ol class="item-list">
+            <!-- <ol class="item-list">
                 {{#each data.items as |item id|}}
                 <li class="item flexrow" data-item-id="{{item._id}}">
                     <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
@@ -99,7 +99,7 @@
             </ol>
             <p>
                 <a class="item-control" title="{{ localize "SIMPLE.ItemCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "SIMPLE.ItemCreate" }}</a>
-            </p>
+            </p> -->
         </div>
     </section>
 </form>
