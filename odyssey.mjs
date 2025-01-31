@@ -13,7 +13,7 @@ import { OdysseyActorSheet } from "./module/actor-sheet.mjs";
 /*  Init Hook                                   */
 /* -------------------------------------------- */
 
-import { PlayeCharacterDataModel, NPCDataModel } from "./module/data-models.mjs";
+import { PlayerCharacterDataModel, NPCDataModel } from "./module/data-models.mjs";
 
 Hooks.once("init", () => {
 
