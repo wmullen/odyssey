@@ -29,8 +29,9 @@
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="themebooks">Themebooks</a>
-        <a class="item" data-tab="biography">Biography</a>
         <a class="item" data-tab="items">Items</a>
+        <a class="item" data-tab="biography">Biography</a>
+        <a class="item" data-tab="notes">Notes</a>
     </nav>
 
     {{!-- Sheet Body --}}
@@ -41,16 +42,11 @@
             <input type="text" name="system.themebook1.themebookName" value="{{system.themebook1.themebookName}}"/>
 
         </div>
-
-        {{!-- Biography Tab --}}
-        <div class="tab biography" data-group="primary" data-tab="biography">
-            {{editor content=data.background.biography target="data.background.biography" button=true owner=owner editable=editable}}
-        </div>
-
-
+        
         <!-- TODO Rewrite -->
         {{!-- Items Tab --}}
         <div class="tab items" data-group="primary" data-tab="items">
+            {editor content=system.items target="system.items" button=true owner=owner editable=editable}}
             <!-- <ol class="item-list">
                 {{#each data.items as |item id|}}
                 <li class="item flexrow" data-item-id="{{item._id}}">
@@ -101,5 +97,16 @@
                 <a class="item-control" title="{{ localize "SIMPLE.ItemCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "SIMPLE.ItemCreate" }}</a>
             </p> -->
         </div>
+        
+        {{!-- Biography Tab --}}
+        <div class="tab biography" data-group="primary" data-tab="biography">
+            {{editor content=system.background.biography target="system.background.biography" button=true owner=owner editable=editable}}
+        </div>
+
+        {{!-- Notes Tab --}}
+        <div class="tab notes" data-group="primary" data-tab="notes">
+            {{editor content=system.notes target="system.notes" button=true owner=owner editable=editable}}
+        </div>
+
     </section>
 </form>
