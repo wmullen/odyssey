@@ -3,24 +3,30 @@ const {
   } = foundry.data.fields;
   
 function createStatField() {
-return {
-    value: new NumberField({ required: true, integer: true, initial: 0 }),
-    min: new NumberField({ required: true, integer: true, initial: -5 }),
-    max: new NumberField({ required: true, integer: true, initial: 5 }),
-    experience: new ArrayField ({ required: true, initial: [0, 0, 0, 0, 0] }) //TODO will this even work?????
-};
+    return {
+        value: new NumberField({ required: true, integer: true, initial: 0 }),
+        min: new NumberField({ required: true, integer: true, initial: -5 }),
+        max: new NumberField({ required: true, integer: true, initial: 5 }),
+        experience: new SchemaField ({ 
+            xp1: new BooleanField({ required: true, initial: false }),
+            xp2: new BooleanField({ required: true, initial: false }),
+            xp3: new BooleanField({ required: true, initial: false }),
+            xp4: new BooleanField({ required: true, initial: false }),
+            xp5: new BooleanField({ required: true, initial: false }),   
+        }) 
+    };
 }
 
 function createThemebookField() {
-return {
-    themebookName: new StringField({ 
-        required: true, 
-        blank: true,
-        options: ["Athleticism", "Empathy", "Essential Bond", "Empathy", "Expertise", "Inflection Point", "Mission", "Struggle", "Weaponsmaster"]
-    }),
-    basicMove: new HTMLField({ required: true, blank: true }),
-    abilityList: new HTMLField({ required: true, blank: true })
-};
+    return {
+        themebookName: new StringField({ 
+            required: true, 
+            blank: true,
+            options: ["Athleticism", "Empathy", "Essential Bond", "Empathy", "Expertise", "Inflection Point", "Mission", "Struggle", "Weaponsmaster"]
+        }),
+        basicMove: new HTMLField({ required: true, blank: true }),
+        abilityList: new HTMLField({ required: true, blank: true })
+    };
 }
 
 export class PlayerCharacterDataModel extends foundry.abstract.TypeDataModel {
