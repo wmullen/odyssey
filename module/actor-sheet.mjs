@@ -27,9 +27,6 @@
     // editable, the items array, and the effects array.
     const context = super.getData();
 
-    // Use a safe clone of the actor data for further operations.
-    const actorData = this.document.toPlainObject();
-
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = actorData.system;
     // context.flags = actorData.flags;
