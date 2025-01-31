@@ -1,8 +1,8 @@
 // Import document classes.
-import { OdysseyActor } from "./documents/actor.mjs";
+import { OdysseyActor } from "./module/actor.mjs";
 // import { BoilerplateItem } from "./documents/item.mjs";
 // Import sheet classes.
-import { OdysseyActorSheet } from "./sheets/actor-sheet.mjs";
+import { OdysseyActorSheet } from "./module/actor-sheet.mjs";
 // import { BoilerplateItemSheet } from "./sheets/item-sheet.mjs";
 // Import helper/utility classes and constants.
 // import { preloadHandlebarsTemplates } from "./helpers/templates.mjs";
