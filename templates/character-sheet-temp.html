@@ -8,6 +8,12 @@
                 <input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
             </h1>
         </div>
+        <div class="harm flex-group-center">
+            <label for="system.harm.value" class="harm-label">Harm: </label>
+            <input type="text" name="system.harm.value" value="{{system.harm.value}}" data-dtype="Number"/>
+            <span> / </span>
+            <input type="text" name="system.harm.max" value="{{system.harm.max}}" data-dtype="Number"/>
+        </div>
     </header>
 
     {{!-- Sheet Tab Navigation --}}

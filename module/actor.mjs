@@ -29,9 +29,9 @@
      * is queried and has a roll executed directly from it).
      */
     prepareDerivedData() {
-      const actorData = this;
-      const systemData = actorData.system;
-      const flags = actorData.flags.odyssey || {};
+      // const actorData = this;
+      // const systemData = actorData.system;
+      // const flags = actorData.flags.odyssey || {};
       
 
   
