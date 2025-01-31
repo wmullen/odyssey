@@ -23,7 +23,7 @@ return {
 };
 }
 
-class PlayerCharacterDataModel extends foundry.abstract.TypeDataModel {
+export class PlayerCharacterDataModel extends foundry.abstract.TypeDataModel {
 static defineSchema() {
     return {
     harm: new SchemaField({
@@ -66,7 +66,7 @@ static defineSchema() {
 }
 }
 
-class NPCDataModel extends foundry.abstract.TypeDataModel {
+export class NPCDataModel extends foundry.abstract.TypeDataModel {
     static defineSchema() {
         return {
             enemyType: new SchemaField({
@@ -90,7 +90,7 @@ class NPCDataModel extends foundry.abstract.TypeDataModel {
     }
 }
 
-class ItemDataModel extends foundry.abstract.TypeDataModel {
+export class ItemDataModel extends foundry.abstract.TypeDataModel {
     static defineSchema() {
         return {
             itemType: new SchemaField({
