@@ -36,18 +36,16 @@
 
     {{!-- Sheet Body --}}
     <section class="sheet-body">
-        {{!-- Themebooks Tab --}}
+        <!-- {{!-- Themebooks Tab --}}
         <div class="tab themebooks" data-group="primary" data-tab="themebooks">
-            <!-- TODO -->
             <input type="text" name="system.themebook1.themebookName" value="{{system.themebook1.themebookName}}"/>
 
         </div>
         
-        <!-- TODO Rewrite -->
         {{!-- Items Tab --}}
         <div class="tab items" data-group="primary" data-tab="items">
             {editor content=system.items target="system.items" button=true owner=owner editable=editable}}
-            <!-- <ol class="item-list">
+            <ol class="item-list">
                 {{#each data.items as |item id|}}
                 <li class="item flexrow" data-item-id="{{item._id}}">
                     <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
@@ -95,7 +93,7 @@
             </ol>
             <p>
                 <a class="item-control" title="{{ localize "SIMPLE.ItemCreate" }}" data-action="create"><i class="fas fa-plus"></i> {{ localize "SIMPLE.ItemCreate" }}</a>
-            </p> -->
+            </p>
         </div>
         
         {{!-- Biography Tab --}}
@@ -106,7 +104,7 @@
         {{!-- Notes Tab --}}
         <div class="tab notes" data-group="primary" data-tab="notes">
             {{editor content=system.notes target="system.notes" button=true owner=owner editable=editable}}
-        </div>
+        </div> -->
 
     </section>
 </form>
