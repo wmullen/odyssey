@@ -22,6 +22,7 @@ function createThemebookField() {
         themebookName: new StringField({ 
             required: true, 
             blank: true,
+            options: ["Athleticism", "Empathy", "Essential Bond", "Empathy", "Expertise", "Inflection Point", "Mission", "Struggle", "Weaponsmaster"]
         }),
         basicMove: new HTMLField({ required: true, blank: true }),
         abilityList: new HTMLField({ required: true, blank: true })
@@ -52,6 +53,7 @@ export class PlayerCharacterDataModel extends foundry.abstract.TypeDataModel {
                     signatureSourceThemebook: new StringField({ 
                         required: true,
                         blank: true, 
+                        options: ["Athleticism", "Empathy", "Essential Bond", "Empathy", "Expertise", "Inflection Point", "Mission", "Struggle", "Weaponsmaster"]
                     }),
                     signatureOngoing: new HTMLField({ require: true, blank: true }),
                     signatureActive: new HTMLField({ require: true, blank: true }),
@@ -77,6 +79,7 @@ export class NPCDataModel extends foundry.abstract.TypeDataModel {
                 value: new StringField({
                     required: true,
                     blank: true,
+                    options: ["Minor", "Major", "Boss", "NPC"]
                 })
             }),
             harm: new SchemaField({
@@ -100,6 +103,7 @@ export class ItemDataModel extends foundry.abstract.TypeDataModel {
                 value: new StringField({
                     required: true,
                     blank: true,
+                    options: ["Regular", "Special", "Core"]
                 })
             }),
             description: new HTMLField({ required: true, blank: true }),
