@@ -129,6 +129,10 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
         context.tab = context.tabs[partId];
         // Enrich biography info for display
         // Enrichment turns text like `[[/r 1d20]]` into buttons
+        console.log(this);
+        console.log(this.actor);
+        console.log(this.actor.system);
+        console.log(this.actor.system.background);
         context.enrichedBiography = await TextEditor.enrichHTML(
           this.actor.system.background.biography,
           {
