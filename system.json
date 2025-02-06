@@ -2,7 +2,7 @@
     "id": "odyssey",
     "title": "Odyssey",
     "description": "The Odyssey role-playing system for FoundryVTT.",
-    "version": "0.3.4",
+    "version": "0.3.5",
     "compatibility": {
       "minimum": "12",
       "verified": "12"
@@ -12,7 +12,7 @@
         "name": "Raetoria"
       }
     ],
-    "esmodules": ["odyssey.mjs"],
+    "esmodules": ["./odyssey.mjs"],
     "styles": ["styles/system-styles.css"],
     "packs": [{
       "name": "chorusthemebooks",
