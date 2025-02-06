@@ -1,5 +1,5 @@
 const {
-    ArrayField, BooleanField, HTMLField, NumberField, SchemaField, StringField 
+    BooleanField, HTMLField, NumberField, SchemaField, StringField 
   } = foundry.data.fields;
   
 function createStatField() {
@@ -35,7 +35,7 @@ export class PlayerCharacterDataModel extends foundry.abstract.TypeDataModel {
             harm: new SchemaField({
                 value: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
                 min: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),
-                max: new NumberField({ required: true, integer:true, initial: 10}),
+                max: new NumberField({ required: true, integer:true, initial: 10 }),
                 unstable: new BooleanField({ required: true, initial: false })
             }),
             stats: new SchemaField({
