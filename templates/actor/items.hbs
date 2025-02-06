@@ -1,0 +1,14 @@
+{{! Items Tab }}
+<section
+  class='tab items {{tab.cssClass}}'
+  data-group='primary'
+  data-tab='items'
+>
+  {{! Editors must receive enriched text data from getData to properly handle rolls, UUID links, etc. }}
+  {{#if editable}} 
+    <prose-mirror name="system.items" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.items}}" collaborate="true" toggled="true">
+      {{{enrichedItems}}}
+    </prose-mirror>
+  {{else}} {{{enrichedItems}}}
+  {{/if}}
+</section>

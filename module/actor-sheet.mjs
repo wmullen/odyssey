@@ -37,27 +37,24 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
   /** @override */
   static PARTS = {
     header: {
-      template: 'systems/odyssey/templates/character-sheet-temp.hbs',
+      template: 'systems/odyssey/templates/actor/header.hbs',
     },
-    // tabs: {
-    //   // Foundry-provided generic template
-    //   template: 'templates/generic/tab-navigation.hbs',
-    // },
-    // features: {
-    //   template: 'systems/obvious-test-v12/templates/actor/features.hbs',
-    // },
-    // biography: {
-    //   template: 'systems/obvious-test-v12/templates/actor/biography.hbs',
-    // },
-    // gear: {
-    //   template: 'systems/obvious-test-v12/templates/actor/gear.hbs',
-    // },
-    // spells: {
-    //   template: 'systems/obvious-test-v12/templates/actor/spells.hbs',
-    // },
-    // effects: {
-    //   template: 'systems/obvious-test-v12/templates/actor/effects.hbs',
-    // },
+    tabs: {
+      // Foundry-provided generic template
+      template: 'templates/generic/tab-navigation.hbs',
+    },
+    themebooks: {
+      template: 'systems/odyssey/templates/actor/themebooks.hbs',
+    },
+    items: {
+      template: 'systems/odyssey/templates/actor/items.hbs',
+    },
+    biography: {
+      template: 'systems/odyssey/templates/actor/biography.hbs',
+    },
+    notes: {
+      template: 'systems/odyssey/templates/actor/notes.hbs',
+    }
   };
 
   /** @override */
@@ -65,7 +62,7 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
     super._configureRenderOptions(options);
     // Not all parts always render
     // options.parts = ['header', 'tabs', 'biography'];
-    options.parts = ['header'];
+    options.parts = ['header', 'tabs', 'themebooks', 'items', 'biography', 'notes'];
     // Don't show the other tabs if only limited view
     if (this.document.limited) return;
     // Control which parts show based on document subtype
@@ -113,15 +110,11 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
     switch (partId) {
       case 'themebooks':
       case 'items':
-      case 'notes':
-        context.tab = context.tabs[partId];
-        break;
-      case 'biography':
         context.tab = context.tabs[partId];
         // Enrich biography info for display
         // Enrichment turns text like `[[/r 1d20]]` into buttons
-        context.enrichedBiography = await TextEditor.enrichHTML(
-          this.actor.system.biography,
+        context.enrichedItems = await TextEditor.enrichHTML(
+          this.actor.system.items,
           {
             // Whether to show secret blocks in the finished html
             secrets: this.document.isOwner,
@@ -132,13 +125,36 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
           }
         );
         break;
-      case 'effects':
+      case 'biography':
         context.tab = context.tabs[partId];
-        // Prepare active effects
-        context.effects = prepareActiveEffectCategories(
-          // A generator that returns all effects stored on the actor
-          // as well as any items
-          this.actor.allApplicableEffects()
+        // Enrich biography info for display
+        // Enrichment turns text like `[[/r 1d20]]` into buttons
+        context.enrichedBiography = await TextEditor.enrichHTML(
+          this.actor.system.background.biography,
+          {
+            // Whether to show secret blocks in the finished html
+            secrets: this.document.isOwner,
+            // Data to fill in for inline rolls
+            rollData: this.actor.getRollData(),
+            // Relative UUID resolution
+            relativeTo: this.actor,
+          }
+        );
+        break;
+      case 'notes':
+        context.tab = context.tabs[partId];
+        // Enrich biography info for display
+        // Enrichment turns text like `[[/r 1d20]]` into buttons
+        context.enrichedNotes = await TextEditor.enrichHTML(
+          this.actor.system.notes,
+          {
+            // Whether to show secret blocks in the finished html
+            secrets: this.document.isOwner,
+            // Data to fill in for inline rolls
+            rollData: this.actor.getRollData(),
+            // Relative UUID resolution
+            relativeTo: this.actor,
+          }
         );
         break;
     }
@@ -155,7 +171,7 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
     // If you have sub-tabs this is necessary to change
     const tabGroup = 'primary';
     // Default tab for first time it's rendered this session
-    if (!this.tabGroups[tabGroup]) this.tabGroups[tabGroup] = 'biography';
+    if (!this.tabGroups[tabGroup]) this.tabGroups[tabGroup] = 'themebooks';
     return parts.reduce((tabs, partId) => {
       const tab = {
         cssClass: '',
