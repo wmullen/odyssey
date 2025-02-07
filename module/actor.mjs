@@ -30,9 +30,8 @@
      */
     prepareDerivedData() {
       const actorData = this;
-      // const systemData = actorData.system;
       const flags = actorData.flags.odyssey || {};
-      
+    }
     /**
      *
      * @override
