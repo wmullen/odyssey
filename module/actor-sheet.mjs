@@ -98,7 +98,7 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
       fields: this.document.fields,
       systemFields: this.document.system.fields,
     };
-    console.log(this.document.system);
+    console.log(this.actor);
     // Offloading context prep to a helper function
     this._prepareItems(context);
 
