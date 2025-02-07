@@ -23,7 +23,7 @@ Hooks.once("init", () => {
 
   // Configure System Data Models.
   CONFIG.Actor.dataModels = {
-    playerCharacter: PlayerCharacterDataModel,
+    playercharacter: PlayerCharacterDataModel,
     npc: NPCDataModel
   };
   // CONFIG.Item.dataModels = {
