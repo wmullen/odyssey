@@ -83,6 +83,7 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
     // Output initialization
     const context = {
       // Validates both permissions and compendium status
+      document: this.document,
       editable: this.isEditable,
       owner: this.document.isOwner,
       limited: this.document.limited,
@@ -95,8 +96,8 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
       config: CONFIG.ODYSSEY,
       tabs: this._getTabs(options.parts),
       // Necessary for formInput and formFields helpers
-      fields: this.document.fields,
-      systemFields: this.document.system.fields,
+      fields: this.document.schema.fields,
+      systemFields: this.document.system.schema.fields,
     };
     console.log(this.actor);
     // Offloading context prep to a helper function
