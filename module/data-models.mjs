@@ -31,6 +31,7 @@ function createThemebookField() {
 
 export class PlayerCharacterDataModel extends foundry.abstract.TypeDataModel {
     static defineSchema() {
+        const fields = foundry.data.fields;
         return {
             harm: new SchemaField({
                 value: new NumberField({ required: true, integer: true, min: 0, initial: 0 }),

@@ -51,7 +51,7 @@
         {{#each system.stats as |ability key|}}
           <div class="ability flexrow flex-group-center">
             <label for="system.stats.{{key}}.value" class="resource-label">{{key}}</label>
-            <input type="text" name="system.stats.{{key}}.value" value="{{ability.value}}" data-dtype="Number" placeholder="{{ability.value}}"/>
+            <input type="text" name="system.stats.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
           </div>
         {{/each}}
       </div>
