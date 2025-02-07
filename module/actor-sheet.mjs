@@ -125,26 +125,26 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
           }
         );
         break;
-      case 'biography':
-        context.tab = context.tabs[partId];
-        // Enrich biography info for display
-        // Enrichment turns text like `[[/r 1d20]]` into buttons
-        console.log(this);
-        console.log(this.actor);
-        console.log(this.actor.system);
-        console.log(this.actor.system.background);
-        context.enrichedBiography = await TextEditor.enrichHTML(
-          this.actor.system.background.biography,
-          {
-            // Whether to show secret blocks in the finished html
-            secrets: this.document.isOwner,
-            // Data to fill in for inline rolls
-            rollData: this.actor.getRollData(),
-            // Relative UUID resolution
-            relativeTo: this.actor,
-          }
-        );
-        break;
+      // case 'biography':
+      //   context.tab = context.tabs[partId];
+      //   // Enrich biography info for display
+      //   // Enrichment turns text like `[[/r 1d20]]` into buttons
+      //   console.log(this);
+      //   console.log(this.actor);
+      //   console.log(this.actor.system);
+      //   console.log(this.actor.system.background);
+      //   context.enrichedBiography = await TextEditor.enrichHTML(
+      //     this.actor.system.background.biography,
+      //     {
+      //       // Whether to show secret blocks in the finished html
+      //       secrets: this.document.isOwner,
+      //       // Data to fill in for inline rolls
+      //       rollData: this.actor.getRollData(),
+      //       // Relative UUID resolution
+      //       relativeTo: this.actor,
+      //     }
+      //   );
+      //   break;
       case 'notes':
         context.tab = context.tabs[partId];
         // Enrich biography info for display
