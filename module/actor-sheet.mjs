@@ -109,6 +109,7 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
   async _preparePartContext(partId, context) {
     switch (partId) {
       case 'themebooks':
+        break;
       case 'items':
         context.tab = context.tabs[partId];
         // Enrich biography info for display
@@ -129,10 +130,10 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
       //   context.tab = context.tabs[partId];
       //   // Enrich biography info for display
       //   // Enrichment turns text like `[[/r 1d20]]` into buttons
-      //   console.log(this);
-      //   console.log(this.actor);
-      //   console.log(this.actor.system);
-      //   console.log(this.actor.system.background);
+        // console.log(this);
+        // console.log(this.actor);
+        // console.log(this.actor.system);
+        // console.log(this.actor.system.background);
       //   context.enrichedBiography = await TextEditor.enrichHTML(
       //     this.actor.system.background.biography,
       //     {
@@ -162,6 +163,10 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
         );
         break;
     }
+    console.log(this);
+    console.log(this.actor);
+    console.log(this.actor.system);
+    console.log(this.actor.system.background);
     return context;
   }
 
@@ -185,7 +190,7 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
         // FontAwesome Icon, if you so choose
         icon: '',
         // Run through localization
-        label: 'ODYSSEY.Actor.Tabs.',
+        label: '',
       };
       switch (partId) {
         case 'header':
