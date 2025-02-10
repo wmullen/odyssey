@@ -56,16 +56,16 @@
     </div>
 
     <div class='resource flexrow'>
-      {{#each system.stats as |ability key|}}
+      {{#each system.stats as |stat key|}}
         <div class="ability flexcol">
           <label for="system.stats.{{key}}.value" class="resource-label">{{key}}</label>
-          <input type="text" name="system.stats.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
+          <input type="text" name="system.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number"/>
           <div class"ability flexrow">
-            <input type='checkbox' name='system.stats.{{key}}.experience.xp1' value='{{ability.experience.xp1}}' data-dtype='Boolean' {{checked system.stats.{{key}}.experience.xp1}}/>
-            <input type='checkbox' name='system.stats.{{key}}.experience.xp2' value='{{ability.experience.xp2}}' data-dtype='Boolean' {{checked system.stats.{{key}}.experience.xp2}}/>
-            <input type='checkbox' name='system.stats.{{key}}.experience.xp3' value='{{ability.experience.xp3}}' data-dtype='Boolean' {{checked system.stats.{{key}}.experience.xp3}}/>
-            <input type='checkbox' name='system.stats.{{key}}.experience.xp4' value='{{ability.experience.xp4}}' data-dtype='Boolean' {{checked system.stats.{{key}}.experience.xp4}}/>
-            <input type='checkbox' name='system.stats.{{key}}.experience.xp5' value='{{ability.experience.xp5}}' data-dtype='Boolean' {{checked system.stats.{{key}}.experience.xp5}}/>
+            <input type='checkbox' name='system.stats.{{key}}.experience.xp1' value='{{stat.experience.xp1}}' data-dtype='Boolean' {{checked stat.experience.xp1}}/>
+            <input type='checkbox' name='system.stats.{{key}}.experience.xp2' value='{{stat.experience.xp2}}' data-dtype='Boolean' {{checked stat.experience.xp2}}/>
+            <input type='checkbox' name='system.stats.{{key}}.experience.xp3' value='{{stat.experience.xp3}}' data-dtype='Boolean' {{checked stat.experience.xp3}}/>
+            <input type='checkbox' name='system.stats.{{key}}.experience.xp4' value='{{stat.experience.xp4}}' data-dtype='Boolean' {{checked stat.experience.xp4}}/>
+            <input type='checkbox' name='system.stats.{{key}}.experience.xp5' value='{{stat.experience.xp5}}' data-dtype='Boolean' {{checked stat.experience.xp5}}/>
           </div>
         </div>
       {{/each}}
