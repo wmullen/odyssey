@@ -1,7 +1,7 @@
 {{! Sheet Header }}
 <header class='sheet-header'>
   <div class="flexcol">
-    <div class="flex-row">
+    <h1 class="flexrow">
       <img
       class='profile-img'
       src='{{actor.img}}'
@@ -11,14 +11,12 @@
       height='100'
       width='100'
       />
-      <h1 class='document-name'>
-        <input
-          name='name'
-          type='text'
-          value='{{actor.name}}'
-          placeholder='Name'
-        />
-      </h1>
+      <input
+        name='name'
+        type='text'
+        value='{{actor.name}}'
+        placeholder='Name'
+      />
     </div>
 
     <div class="flexrow">
@@ -49,7 +47,7 @@
       <meter id="harm-progress" value="{{system.harm.value}}" min="{{system.harm.min}}" max="{{system.harm.max}}"></meter>
     </div>
 
-    <div class='resource flex-group-center'>
+    <div class='resource flexrow'>
       {{#each system.stats as |ability key|}}
         <div class="ability flexcol">
           <label for="system.stats.{{key}}.value" class="resource-label">{{key}}</label>
