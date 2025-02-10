@@ -1,66 +1,68 @@
 {{! Sheet Header }}
 <header class='sheet-header'>
-  <div class="flex-row">
-    <img
-    class='profile-img'
-    src='{{actor.img}}'
-    data-edit='img'
-    data-action='onEditImage'
-    title='{{actor.name}}'
-    height='100'
-    width='100'
-    />
-    <h1 class='document-name'>
-      <input
-        name='name'
-        type='text'
-        value='{{actor.name}}'
-        placeholder='Name'
+  <div class="flexcol">
+    <div class="flex-row">
+      <img
+      class='profile-img'
+      src='{{actor.img}}'
+      data-edit='img'
+      data-action='onEditImage'
+      title='{{actor.name}}'
+      height='100'
+      width='100'
       />
-    </h1>
-  </div>
-
-  <div class="flex-row">
-    <div class="flex-column">
-      <div>
-        <label for='system.harm.value' class='resource-label'>
-          Harm:
-        </label>
+      <h1 class='document-name'>
         <input
+          name='name'
           type='text'
-          name='system.harm.value'
-          value='{{system.harm.value}}'
-          data-dtype='Number'
+          value='{{actor.name}}'
+          placeholder='Name'
         />
-      </div>
-      <div>
-        <label for='system.harm.unstable' class='resource-label'>
-          Unstable?
-        </label>
-        <input
-          type='checkbox'
-          name='system.harm.unstable'
-          value='{{system.harm.unstable}}'
-          data-dtype='Boolean'
-        />
-      </div>
+      </h1>
     </div>
-    <meter id="harm-progress" value="{{system.harm.value}}" min="{{system.harm.min}}" max="{{system.harm.max}}"></meter>
-  </div>
 
-  <div class='resource flex-group-center'>
-    {{#each system.stats as |ability key|}}
-      <div class="ability flexcol">
-        <label for="system.stats.{{key}}.value" class="resource-label">{{key}}</label>
-        <input type="text" name="system.stats.{{key}}.value" value="system.stats.{{key}}.value" data-dtype="Number"/>
-        <div class"ability flexrow">
-          <input type='checkbox' name='system.stats.{{key}}.experience.xp1' value='system.stats.{{key}}.experience.xp1' data-dtype='Boolean'/>
-          <input type='checkbox' name='system.stats.{{key}}.experience.xp2' value='system.stats.{{key}}.experience.xp2' data-dtype='Boolean'/>
-          <input type='checkbox' name='system.stats.{{key}}.experience.xp3' value='system.stats.{{key}}.experience.xp3' data-dtype='Boolean'/>
-          <input type='checkbox' name='system.stats.{{key}}.experience.xp4' value='system.stats.{{key}}.experience.xp4' data-dtype='Boolean'/>
-          <input type='checkbox' name='system.stats.{{key}}.experience.xp5' value='system.stats.{{key}}.experience.xp5' data-dtype='Boolean'/>
+    <div class="flexrow">
+      <div class="flexcol">
+        <div class="flexrow">
+          <label for='system.harm.value' class='resource-label'>
+            Harm:
+          </label>
+          <input
+            type='text'
+            name='system.harm.value'
+            value='{{system.harm.value}}'
+            data-dtype='Number'
+          />
+        </div>
+        <div class="flexrow">
+          <label for='system.harm.unstable' class='resource-label'>
+            Unstable?
+          </label>
+          <input
+            type='checkbox'
+            name='system.harm.unstable'
+            value='{{system.harm.unstable}}'
+            data-dtype='Boolean'
+          />
         </div>
       </div>
-    {{/each}}
+      <meter id="harm-progress" value="{{system.harm.value}}" min="{{system.harm.min}}" max="{{system.harm.max}}"></meter>
+    </div>
+
+    <div class='resource flex-group-center'>
+      {{#each system.stats as |ability key|}}
+        <div class="ability flexcol">
+          <label for="system.stats.{{key}}.value" class="resource-label">{{key}}</label>
+          <input type="text" name="system.stats.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
+          <div class"ability flexrow">
+            <input type='checkbox' name='system.stats.{{key}}.experience.xp1' value='{{ability.experience.xp1}}' data-dtype='Boolean'/>
+            <input type='checkbox' name='system.stats.{{key}}.experience.xp2' value='{{ability.experience.xp2}}' data-dtype='Boolean'/>
+            <input type='checkbox' name='system.stats.{{key}}.experience.xp3' value='{{ability.experience.xp3}}' data-dtype='Boolean'/>
+            <input type='checkbox' name='system.stats.{{key}}.experience.xp4' value='{{ability.experience.xp4}}' data-dtype='Boolean'/>
+            <input type='checkbox' name='system.stats.{{key}}.experience.xp5' value='{{ability.experience.xp5}}' data-dtype='Boolean'/>
+          </div>
+        </div>
+      {{/each}}
+    </div>
   </div>
 </header>
