@@ -3,7 +3,7 @@
     <div class='grid grid-2col'>
       {{#each system.themebooks as |themebook key|}}
         <div class="flexcol">
-          <label for="system.themebooks.{{key}}.themebookName" class="resource-label">Themebook {{@index + 1}}</label>
+          <label for="system.themebooks.{{key}}.themebookName" class="resource-label">Themebook {{@index}}</label>
           <select name="themebook-selector">
             {{log "full arr" this.themebookName.options}}
             {{#each this.themebookName.options as |nameOption|}}
