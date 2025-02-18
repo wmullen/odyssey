@@ -8,7 +8,8 @@
             {{log "this" this}}
             {{log "themebook" themebook}}
             {{log "key" key}}
-            {{log "full arr" this.themebookName.options}}
+            {{formGroup this.themebookName.options name="themebookName.options"}}
+            {{log "full arr" themebookName.options}}
             {{#each this.themebookName.options as |nameOption|}}
               {{log "option" nameOption}}
               <option value="volvo">{{nameOption}}</option>
