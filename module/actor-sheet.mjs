@@ -110,6 +110,30 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
   async _preparePartContext(partId, context) {
     switch (partId) {
       case 'themebooks':
+        for (var i = 0; i <= this.actor.system.themebooks.length; i++) {
+          context["enrichedBasicMove" + i] = await TextEditor.enrichHTML(
+            this.actor.system.themebooks[i].basicMove,
+            {
+              // Whether to show secret blocks in the finished html
+              secrets: this.document.isOwner,
+              // Data to fill in for inline rolls
+              rollData: this.actor.getRollData(),
+              // Relative UUID resolution
+              relativeTo: this.actor,
+            }
+          );
+          context["enrichedAbilityList" + i] = await TextEditor.enrichHTML(
+            this.actor.system.themebooks[i].abilityList,
+            {
+              // Whether to show secret blocks in the finished html
+              secrets: this.document.isOwner,
+              // Data to fill in for inline rolls
+              rollData: this.actor.getRollData(),
+              // Relative UUID resolution
+              relativeTo: this.actor,
+            }
+          );
+        }
         break;
       case 'items':
         context.tab = context.tabs[partId];
