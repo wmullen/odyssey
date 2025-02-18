@@ -5,7 +5,7 @@
         <div class="flexcol">
           <label for="system.themebooks.{{key}}.themebookName" class="resource-label">Themebook {{@index}}</label>
           <select name="themebook selector">
-            {{#each system.themebooks.{{key}}.themebookName.options as |themebookOption optionKey|}}
+            {{#each system.themebooks[key].themebookName.options as |themebookOption optionKey|}}
               <option value="volvo">Volvo</option>
             {{/each}}
           </select>
