@@ -4,11 +4,9 @@
       {{#each system.themebooks as |themebook key|}}
         <div class="flexcol">
           <label for="system.themebooks.{{key}}.themebookName" class="resource-label">Themebook {{@index}}</label>
-          <select name="themebook selector">
-            {{log "key" system.themebooks.key}}
-            {{log "this" this}}
-            {{#each system.themebooks[key].themebookName.options as |themebookOption optionKey|}}
-              <option value="volvo">Volvo</option>
+          <select name="themebook-selector">
+            {{#each this.themebookName.options as |nameOption|}}
+              <option value="system.themebooks.{{key}}.themebookName">{{nameOption}}</option>
             {{/each}}
           </select>
           <label for="system.themebooks.{{key}}.basicMove" class="resource-label">Basic Move:</label>
