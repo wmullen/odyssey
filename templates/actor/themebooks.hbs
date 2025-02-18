@@ -5,10 +5,13 @@
         <div class="flexcol">
           <label for="system.themebooks.{{key}}.themebookName" class="resource-label">Themebook {{@index}}</label>
           <select name="themebook-selector">
+            {{log "this" this}}
+            {{log "themebook" themebook}}
+            {{log "key" key}}
             {{log "full arr" this.themebookName.options}}
             {{#each this.themebookName.options as |nameOption|}}
               {{log "option" nameOption}}
-              <option value="system.themebooks.{{key}}.themebookName">{{nameOption}}</option>
+              <option value="volvo">{{nameOption}}</option>
             {{/each}}
           </select>
           <label for="system.themebooks.{{key}}.basicMove" class="resource-label">Basic Move:</label>
