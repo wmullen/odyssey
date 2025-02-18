@@ -2,7 +2,7 @@
     "id": "odyssey",
     "title": "Odyssey",
     "description": "The Odyssey role-playing system for FoundryVTT.",
-    "version": "0.5.1",
+    "version": "0.5.2",
     "compatibility": {
       "minimum": "12",
       "verified": "12"
@@ -13,7 +13,7 @@
       }
     ],
     "esmodules": ["./odyssey.mjs"],
-    "styles": ["styles/system-styles.css"],
+    "styles": ["styles/odyssey.css"],
     "packs": [],
     "languages": [
       {
