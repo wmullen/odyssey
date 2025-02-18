@@ -49,18 +49,18 @@ export class PlayerCharacterDataModel extends foundry.abstract.TypeDataModel {
                 themebook2: new SchemaField(createThemebookField()),
                 themebook3: new SchemaField(createThemebookField()),
                 themebook4: new SchemaField(createThemebookField()),
-                signatureMove: new SchemaField({
-                    signatureSourceThemebook: new StringField({ 
-                        required: true,
-                        blank: true, 
-                        options: ["Athleticism", "Empathy", "Essential Bond", "Empathy", "Expertise", "Inflection Point", "Mission", "Struggle", "Weaponsmaster"]
-                    }),
-                    signatureOngoing: new HTMLField({ require: true, blank: true }),
-                    signatureActive: new HTMLField({ require: true, blank: true }),
-                    signatureEffect: new HTMLField({ require: true, blank: true }),
-                    signatureFrequency: new HTMLField({ require: true, blank: true }),
-                    signatureDownside: new HTMLField({ require: true, blank: true })
-                })
+            }),
+            signatureMove: new SchemaField({
+                signatureSourceThemebook: new StringField({ 
+                    required: true,
+                    blank: true, 
+                    options: ["Athleticism", "Empathy", "Essential Bond", "Empathy", "Expertise", "Inflection Point", "Mission", "Struggle", "Weaponsmaster"]
+                }),
+                signatureOngoing: new HTMLField({ require: true, blank: true }),
+                signatureActive: new HTMLField({ require: true, blank: true }),
+                signatureEffect: new HTMLField({ require: true, blank: true }),
+                signatureFrequency: new HTMLField({ require: true, blank: true }),
+                signatureDownside: new HTMLField({ require: true, blank: true })
             }),
             items: new HTMLField({ required: true, blank: true }),
             background: new SchemaField({
