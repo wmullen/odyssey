@@ -20,13 +20,13 @@
               </prose-mirror>
           {{else}} {{{add "enrichedAbilityList" modifier=@index}}}
           {{/if}} --}}
+        </div>
+      {{/each}}
           {{#if editable}} 
               <prose-mirror name="system.themebooks.themebook0.abilityList" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.themebooks.themebook0.abilityList}}" collaborate="true" toggled="true">
                 {{{add "enrichedAbilityList" modifier=00}}}
               </prose-mirror>
           {{else}} {{{add "enrichedAbilityList" modifier=0}}}
           {{/if}}
-        </div>
-      {{/each}}
     </div>
 </section>
