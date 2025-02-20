@@ -6,27 +6,20 @@
           <label for="system.themebooks.{{key}}.themebookName" class="resource-label">Themebook {{add @index modifier=1}}</label>
           <input type='text' name='system.themebooks.{{key}}.themebookName' value='{{this.themebookName}}'/>
           <label for="system.themebooks.{{key}}.basicMove" class="resource-label">Basic Move:</label>
-          {{!-- {{log "THIS IS BASIC MOVE" this}}
             {{#if editable}} 
               <prose-mirror name="system.themebooks.{{key}}.basicMove" data-document-u-u-i-d="{{actor.uuid}}" value="{{this.basicMove}}" collaborate="true" toggled="true">
-                {{{add "enrichedBasicMove" modifier=@index}}}
+                {{{context[(add "enrichedBasicMove" modifier=@index)]}}}
               </prose-mirror>
-          {{else}} {{{add "enrichedBasicMove" modifier=@index}}}
+          {{else}} {{{context[(add "enrichedBasicMove" modifier=@index)]}}}
           {{/if}}
           <label for="system.themebooks.{{key}}.abilityList" class="resource-label">Abilities</label>
           {{#if editable}} 
               <prose-mirror name="system.themebooks.{{key}}.abilityList" data-document-u-u-i-d="{{actor.uuid}}" value="{{this.abilityList}}" collaborate="true" toggled="true">
-                {{{add "enrichedAbilityList" modifier=@index}}}
+                {{{context[(add "enrichedAbilityList" modifier=@index)]}}}
               </prose-mirror>
-          {{else}} {{{add "enrichedAbilityList" modifier=@index}}}
-          {{/if}} --}}
+          {{else}} {{{context[(add "enrichedAbilityList" modifier=@index)]}}}
+          {{/if}}
         </div>
       {{/each}}
-          {{#if editable}} 
-              <prose-mirror name="system.themebooks.themebook0.abilityList" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.themebooks.themebook0.abilityList}}" collaborate="true" toggled="true">
-                {{{context.enrichedAbilityList0}}}
-              </prose-mirror>
-          {{else}} {{{context.enrichedAbilityList0}}}
-          {{/if}}
     </div>
 </section>
