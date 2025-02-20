@@ -110,13 +110,10 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
     switch (partId) {
       case 'themebooks':
         for (var i = 0; i < Object.keys(this.actor.system.themebooks).length; i++) {
-          let enrichName = "themebook" + i;
-          console.log("TESTING STRINGS");
-          console.log(enrichName);
-          console.log(this.actor.system.themebooks.themebook0);
-          console.log(this.actor.system.themebooks[enrichName]);
-          context["enrichedBasicMove" + i] = await TextEditor.enrichHTML(
-            this.actor.system.themebooks[enrichName].basicMove,
+          let enrichThemebookName = "themebook" + i;
+          let enrichBasicMoveName = "enrichedBasicMove" + i;
+          context[enrichBasicMoveName] = await TextEditor.enrichHTML(
+            this.actor.system.themebooks[enrichThemebookName].basicMove,
             {
               // Whether to show secret blocks in the finished html
               secrets: this.document.isOwner,
@@ -126,8 +123,9 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
               relativeTo: this.actor,
             }
           );
-          context["enrichedAbilityList" + i] = await TextEditor.enrichHTML(
-            this.actor.system.themebooks[enrichName].abilityList,
+          let enrichAbilityListName = "enrichedAbilityList" + i;
+          context[enrichAbilityListName] = await TextEditor.enrichHTML(
+            this.actor.system.themebooks[enrichThemebookName].abilityList,
             {
               // Whether to show secret blocks in the finished html
               secrets: this.document.isOwner,
