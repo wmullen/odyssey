@@ -7,14 +7,14 @@
           <input type='text' name='system.themebooks.{{key}}.themebookName' value='{{this.themebookName}}'/>
           <label for="system.themebooks.{{key}}.basicMove" class="resource-label">Basic Move:</label>
             {{#if editable}} 
-              <prose-mirror name="system.themebooks.{{key}}.basicMove" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.themebooks.{{key}}.basicMove}}" collaborate="true" toggled="true">
+              <prose-mirror name="system.themebooks.{{key}}.basicMove" data-document-u-u-i-d="{{actor.uuid}}" value="{{this.basicMove}}" collaborate="true" toggled="true">
                 {{{"enrichedBasicMove" + @index}}}
               </prose-mirror>
           {{else}} {{{"enrichedBasicMove" + @index}}}
           {{/if}}
           <label for="system.themebooks.{{key}}.abilityList" class="resource-label">Abilities</label>
           {{#if editable}} 
-              <prose-mirror name="system.themebooks.{{key}}.abilityList" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.themebooks.{{key}}.abilityList}}" collaborate="true" toggled="true">
+              <prose-mirror name="system.themebooks.{{key}}.abilityList" data-document-u-u-i-d="{{actor.uuid}}" value="{{this.abilityList}}" collaborate="true" toggled="true">
                 {{{"enrichedAbilityList" + @index}}}
               </prose-mirror>
           {{else}} {{{"enrichedAbilityList" + @index}}}
