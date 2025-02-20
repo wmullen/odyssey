@@ -2,7 +2,7 @@
     "id": "odyssey",
     "title": "Odyssey",
     "description": "The Odyssey role-playing system for FoundryVTT.",
-    "version": "0.5.33",
+    "version": "0.5.34",
     "compatibility": {
       "minimum": "12",
       "verified": "12"
@@ -25,11 +25,19 @@
     "documentTypes": {
       "Actor": {
         "playercharacter": { "htmlFields": [
-          "themebooks.signatureMove.signatureOngoing",
-          "themebooks.signatureMove.signatureActive",
-          "themebooks.signatureMove.signatureEffect",
-          "themebooks.signatureMove.signatureFrequency",
-          "themebooks.signatureMove.signatureDownside",
+          "themebooks.themebook0.basicMove",
+          "themebooks.themebook0.abilityList",
+          "themebooks.themebook1.basicMove",
+          "themebooks.themebook1.abilityList",
+          "themebooks.themebook2.basicMove",
+          "themebooks.themebook2.abilityList",
+          "themebooks.themebook3.basicMove",
+          "themebooks.themebook3.abilityList",
+          "signatureMove.signatureOngoing",
+          "signatureMove.signatureActive",
+          "signatureMove.signatureEffect",
+          "signatureMove.signatureFrequency",
+          "signatureMove.signatureDownside",
           "items",
           "background.pronouns",
           "background.biography",
