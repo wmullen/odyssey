@@ -113,10 +113,10 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
           console.log("TESTING STRINGS");
           console.log("themebook" + 1);
           console.log(this.actor.system.themebooks.themebook0);
-          let testingVar = "themebook" + i;
           console.log(this.actor.system.themebooks[testingVar]);
+          let enrichName = "themebook" + i;
           context["enrichedBasicMove" + i] = await TextEditor.enrichHTML(
-            this.actor.system.themebooks["themebook" + i].basicMove,
+            this.actor.system.themebooks[enrichName].basicMove,
             {
               // Whether to show secret blocks in the finished html
               secrets: this.document.isOwner,
@@ -126,8 +126,9 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
               relativeTo: this.actor,
             }
           );
+          enrichName = "themebook" + i;
           context["enrichedAbilityList" + i] = await TextEditor.enrichHTML(
-            this.actor.system.themebooks["themebook" + i].abilityList,
+            this.actor.system.themebooks[enrichName].abilityList,
             {
               // Whether to show secret blocks in the finished html
               secrets: this.document.isOwner,
