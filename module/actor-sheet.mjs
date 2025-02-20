@@ -113,6 +113,8 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
           console.log("TESTING STRINGS");
           console.log("themebook" + 1);
           console.log(this.actor.system.themebooks.themebook0);
+          let testingVar = "themebook" + i;
+          console.log(this.actor.system.themebooks[testingVar]);
           context["enrichedBasicMove" + i] = await TextEditor.enrichHTML(
             this.actor.system.themebooks["themebook" + i].basicMove,
             {
