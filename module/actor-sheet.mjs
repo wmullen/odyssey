@@ -110,7 +110,7 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
     switch (partId) {
       case 'themebooks':
         console.log("NUM OF THEMEBOOKS");
-        console.log(this.actor.themebooks.length);
+        console.log(this.actor.system.themebooks.length);
         for (var i = 0; i <= this.actor.system.themebooks.length; i++) {
           console.log("JS BASIC MOVE");
           console.log("enrichedBasicMove" + i);
