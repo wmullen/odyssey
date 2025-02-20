@@ -109,7 +109,7 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
   async _preparePartContext(partId, context) {
     switch (partId) {
       case 'themebooks':
-        for (var i = 0; i <= Object.keys(this.actor.system.themebooks).length; i++) {
+        for (var i = 0; i < Object.keys(this.actor.system.themebooks).length; i++) {
           let enrichName = "themebook" + i;
           console.log("TESTING STRINGS");
           console.log(enrichName);
