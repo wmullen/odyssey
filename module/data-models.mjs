@@ -45,10 +45,10 @@ export class PlayerCharacterDataModel extends foundry.abstract.TypeDataModel {
                 finesse: new SchemaField(createStatField()),
             }),
             themebooks: new SchemaField({
+                themebook0: new SchemaField(createThemebookField()),
                 themebook1: new SchemaField(createThemebookField()),
                 themebook2: new SchemaField(createThemebookField()),
                 themebook3: new SchemaField(createThemebookField()),
-                themebook4: new SchemaField(createThemebookField()),
             }),
             signatureMove: new SchemaField({
                 signatureSourceThemebook: new StringField({ 
