@@ -99,7 +99,6 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
       fields: this.document.fields,
       systemFields: this.document.system.fields,
     };
-    console.log(this.actor);
     // Offloading context prep to a helper function
     this._prepareItems(context);
 
@@ -110,6 +109,8 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
   async _preparePartContext(partId, context) {
     switch (partId) {
       case 'themebooks':
+        console.log("NUM OF THEMEBOOKS");
+        console.log(this.actor.themebooks.length);
         for (var i = 0; i <= this.actor.system.themebooks.length; i++) {
           console.log("JS BASIC MOVE");
           console.log("enrichedBasicMove" + i);
