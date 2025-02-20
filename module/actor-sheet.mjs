@@ -791,3 +791,7 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
     }
   }
 }
+
+Handlebars.registerHelper("add", function(param1, options) {
+  return (param1 + options.hash.modifier);
+});
