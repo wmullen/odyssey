@@ -19,6 +19,9 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
       width: 600,
       height: 600,
     },
+    window: {
+      resizable: true
+    },
     actions: {
       onEditImage: this._onEditImage,
       viewDoc: this._viewDoc,
