@@ -6,6 +6,7 @@
           <label for="system.themebooks.{{key}}.themebookName" class="resource-label">Themebook {{add @index modifier=1}}</label>
           <input type='text' name='system.themebooks.{{key}}.themebookName' value='{{this.themebookName}}'/>
           <label for="system.themebooks.{{key}}.basicMove" class="resource-label">Basic Move:</label>
+          {{log "THIS IS BASIC MOVE" this.basicMove}}
             {{#if editable}} 
               <prose-mirror name="system.themebooks.{{key}}.basicMove" data-document-u-u-i-d="{{actor.uuid}}" value="{{this.basicMove}}" collaborate="true" toggled="true">
                 {{{add "enrichedBasicMove" modifier=@index}}}
