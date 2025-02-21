@@ -226,10 +226,11 @@
 /* Styles limited to odyssey sheets */
 .odyssey .item-form {
   font-family: "Roboto", sans-serif;
+  overflow: auto;
 }
 .odyssey .sheet-header {
   flex: 0 auto;
-  overflow: hidden;
+  overflow: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
