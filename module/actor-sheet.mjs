@@ -143,11 +143,11 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
               relativeTo: this.actor,
             }
           );
+          console.log("BASIC MOVE: ");
+          console.log(context[enrichBasicMoveName]);
+          console.log("ABILITY LIST: ");
+          console.log(context[enrichAbilityListName]);
         }
-        console.log("BASIC MOVE: ");
-        console.log(context[enrichBasicMoveName]);
-        console.log("ABILITY LIST: ");
-        console.log(context[enrichAbilityListName]);
         
         context.enrichedSignatureOngoing = await TextEditor.enrichHTML(
           this.actor.system.signatureMove.signatureOngoing,

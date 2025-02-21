@@ -2,7 +2,7 @@
     "id": "odyssey",
     "title": "Odyssey",
     "description": "The Odyssey role-playing system for FoundryVTT.",
-    "version": "0.6.13",
+    "version": "0.6.14",
     "compatibility": {
       "minimum": "12",
       "verified": "12"
