@@ -138,6 +138,61 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
               relativeTo: this.actor,
             }
           );
+          context.enrichedSignatureOngoing = await TextEditor.enrichHTML(
+            this.actor.system.signatureMove.signatureOngoing,
+            {
+              // Whether to show secret blocks in the finished html
+              secrets: this.document.isOwner,
+              // Data to fill in for inline rolls
+              rollData: this.actor.getRollData(),
+              // Relative UUID resolution
+              relativeTo: this.actor,
+            }
+          );
+          context.enrichedSignatureActive = await TextEditor.enrichHTML(
+            this.actor.system.signatureMove.signatureActive,
+            {
+              // Whether to show secret blocks in the finished html
+              secrets: this.document.isOwner,
+              // Data to fill in for inline rolls
+              rollData: this.actor.getRollData(),
+              // Relative UUID resolution
+              relativeTo: this.actor,
+            }
+          );
+          context.enrichedSignatureEffect = await TextEditor.enrichHTML(
+            this.actor.system.signatureMove.signatureEffect,
+            {
+              // Whether to show secret blocks in the finished html
+              secrets: this.document.isOwner,
+              // Data to fill in for inline rolls
+              rollData: this.actor.getRollData(),
+              // Relative UUID resolution
+              relativeTo: this.actor,
+            }
+          );
+          context.enrichedSignatureFrequency = await TextEditor.enrichHTML(
+            this.actor.system.signatureMove.signatureFrequency,
+            {
+              // Whether to show secret blocks in the finished html
+              secrets: this.document.isOwner,
+              // Data to fill in for inline rolls
+              rollData: this.actor.getRollData(),
+              // Relative UUID resolution
+              relativeTo: this.actor,
+            }
+          );
+          context.enrichedSignatureDownside = await TextEditor.enrichHTML(
+            this.actor.system.signatureMove.signatureDownside,
+            {
+              // Whether to show secret blocks in the finished html
+              secrets: this.document.isOwner,
+              // Data to fill in for inline rolls
+              rollData: this.actor.getRollData(),
+              // Relative UUID resolution
+              relativeTo: this.actor,
+            }
+          );
         }
         break;
       case 'items':

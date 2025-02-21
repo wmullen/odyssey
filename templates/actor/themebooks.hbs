@@ -1,25 +1,67 @@
 {{! Themebook Tab }}
 <section class='tab themebooks {{tab.cssClass}}' data-group='primary' data-tab='themebooks'>
-    <div class='grid grid-2col'>
-      {{#each system.themebooks as |themebook key|}}
-        <div class="flexcol">
-          <label for="system.themebooks.{{key}}.themebookName" class="resource-label">Themebook {{add @index modifier=1}}</label>
-          <input type='text' name='system.themebooks.{{key}}.themebookName' value='{{this.themebookName}}'/>
-          <label for="system.themebooks.{{key}}.basicMove" class="resource-label">Basic Move:</label>
+    <div class="flexcol">
+      <div class='grid grid-2col'>
+        {{#each system.themebooks as |themebook key|}}
+          <div class="flexcol">
+            <label for="system.themebooks.{{key}}.themebookName" class="resource-label">Themebook {{add @index modifier=1}}</label>
+            <input type='text' name='system.themebooks.{{key}}.themebookName' value='{{this.themebookName}}'/>
+            <label for="system.themebooks.{{key}}.basicMove" class="resource-label">Basic Move:</label>
+              {{#if editable}} 
+                <prose-mirror name="system.themebooks.{{key}}.basicMove" data-document-u-u-i-d="{{actor.uuid}}" value="{{this.basicMove}}" collaborate="true" toggled="true">
+                  {{{add "enrichedBasicMove" modifier=@index}}}
+                </prose-mirror>
+            {{else}} {{{add "enrichedBasicMove" modifier=@index}}}
+            {{/if}}
+            <label for="system.themebooks.{{key}}.abilityList" class="resource-label">Abilities</label>
             {{#if editable}} 
-              <prose-mirror name="system.themebooks.{{key}}.basicMove" data-document-u-u-i-d="{{actor.uuid}}" value="{{this.basicMove}}" collaborate="true" toggled="true">
-                {{{(add "enrichedBasicMove" modifier=@index)}}}
-              </prose-mirror>
-          {{else}} {{{(add "enrichedBasicMove" modifier=@index)}}}
-          {{/if}}
-          <label for="system.themebooks.{{key}}.abilityList" class="resource-label">Abilities</label>
+                <prose-mirror name="system.themebooks.{{key}}.abilityList" data-document-u-u-i-d="{{actor.uuid}}" value="{{this.abilityList}}" collaborate="true" toggled="true">
+                  {{{add "enrichedAbilityList" modifier=@index}}}
+                </prose-mirror>
+            {{else}} {{{add "enrichedAbilityList" modifier=@index}}}
+            {{/if}}
+          </div>
+        {{/each}}
+      </div>
+      <div class="flexcol">
+        <label>Signature Move</label>
+        <label for="system.signatureMove.signatureSourceThemebook" class="resource-label">Source Themebook:</label>
+        <input type='text' name='system.signatureMove.signatureSourceThemebook' value='{{system.signatureMove.signatureSourceThemebook}}'/>
+        <label for="system.signatureMove.signatureOngoing" class="resource-label">Ongoing Ability:</label>
           {{#if editable}} 
-              <prose-mirror name="system.themebooks.{{key}}.abilityList" data-document-u-u-i-d="{{actor.uuid}}" value="{{this.abilityList}}" collaborate="true" toggled="true">
-                {{{(add "enrichedAbilityList" modifier=@index)}}}
-              </prose-mirror>
-          {{else}} {{{(add "enrichedAbilityList" modifier=@index)}}}
+            <prose-mirror name="system.signatureMove.signatureOngoing" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.signatureMove.signatureOngoing}}" collaborate="true" toggled="true">
+              {{{enrichedSignatureOngoing}}}
+            </prose-mirror>
+          {{else}} {{{enrichedSignatureOngoing}}}
           {{/if}}
-        </div>
-      {{/each}}
+        <label for="system.signatureMove.signatureActive" class="resource-label">Active Ability:</label>
+          {{#if editable}} 
+            <prose-mirror name="system.signatureMove.signatureActive" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.signatureMove.signatureActive}}" collaborate="true" toggled="true">
+              {{{enrichedSignatureActive}}}
+            </prose-mirror>
+        {{else}} {{{enrichedSignatureActive}}}
+        {{/if}}
+        <label for="system.signatureMove.signatureEffect" class="resource-label">Move Effect:</label>
+          {{#if editable}} 
+            <prose-mirror name="system.signatureMove.signatureEffect" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.signatureMove.signatureEffect}}" collaborate="true" toggled="true">
+              {{{enrichedSignatureEffect}}}
+            </prose-mirror>
+        {{else}} {{{enrichedSignatureEffect}}}
+        {{/if}}
+        <label for="system.signatureMove.signatureFrequency" class="resource-label">Move Frequency:</label>
+          {{#if editable}} 
+            <prose-mirror name="system.signatureMove.signatureFrequency" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.signatureMove.signatureFrequency}}" collaborate="true" toggled="true">
+              {{{enrichedSignatureFrequency}}}
+            </prose-mirror>
+        {{else}} {{{enrichedSignatureFrequency}}}
+        {{/if}}
+        <label for="system.signatureMove.signatureDownside" class="resource-label">Downside:</label>
+          {{#if editable}} 
+            <prose-mirror name="system.signatureMove.signatureDownside" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.signatureMove.signatureDownside}}" collaborate="true" toggled="true">
+              {{{enrichedSignatureDownside}}}
+            </prose-mirror>
+        {{else}} {{{enrichedSignatureDownside}}}
+        {{/if}}
+      </div>
     </div>
 </section>
