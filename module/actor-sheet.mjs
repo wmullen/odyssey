@@ -95,7 +95,7 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
       // Add the actor's data to context.data for easier access, as well as flags.
       system: this.actor.system,
       flags: this.actor.flags,
-      // Adding a pointer to CONFIG.OBVIOUS_TEST
+      // Adding a pointer to CONFIG.ODYSSEY
       config: CONFIG.ODYSSEY,
       tabs: this._getTabs(options.parts),
       // Necessary for formInput and formFields helpers
@@ -110,11 +110,15 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
 
   /** @override */
   async _preparePartContext(partId, context) {
+    console.log("CONTEXT: ");
+        console.log(context);
     switch (partId) {
       case 'themebooks':
         for (var i = 0; i < Object.keys(this.actor.system.themebooks).length; i++) {
           let enrichThemebookName = "themebook" + i;
           let enrichBasicMoveName = "enrichedBasicMove" + i;
+          console.log("THEMEBOOK: " + enrichThemebookName);
+          console.log("BASIC MOVE NAME: " + enrichBasicMoveName);
           context[enrichBasicMoveName] = await TextEditor.enrichHTML(
             this.actor.system.themebooks[enrichThemebookName].basicMove,
             {
@@ -127,6 +131,7 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
             }
           );
           let enrichAbilityListName = "enrichedAbilityList" + i;
+          console.log("ABILITY NAME: " + enrichAbilityListName);
           context[enrichAbilityListName] = await TextEditor.enrichHTML(
             this.actor.system.themebooks[enrichThemebookName].abilityList,
             {
@@ -139,6 +144,11 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
             }
           );
         }
+        console.log("BASIC MOVE: ");
+        console.log(context[enrichBasicMoveName]);
+        console.log("ABILITY LIST: ");
+        console.log(context[enrichAbilityListName]);
+        
         context.enrichedSignatureOngoing = await TextEditor.enrichHTML(
           this.actor.system.signatureMove.signatureOngoing,
           {
