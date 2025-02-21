@@ -8,16 +8,16 @@
           <label for="system.themebooks.{{key}}.basicMove" class="resource-label">Basic Move:</label>
             {{#if editable}} 
               <prose-mirror name="system.themebooks.{{key}}.basicMove" data-document-u-u-i-d="{{actor.uuid}}" value="{{this.basicMove}}" collaborate="true" toggled="true">
-                {{!-- {{{lookup context (add "enrichedBasicMove" modifier=@index)}}} --}}
+                {{{(add "enrichedBasicMove" modifier=@index)}}}
               </prose-mirror>
-          {{!-- {{else}} {{{lookup context (add "enrichedBasicMove" modifier=@index)}}} --}}
+          {{else}} {{{(add "enrichedBasicMove" modifier=@index)}}}
           {{/if}}
           <label for="system.themebooks.{{key}}.abilityList" class="resource-label">Abilities</label>
           {{#if editable}} 
               <prose-mirror name="system.themebooks.{{key}}.abilityList" data-document-u-u-i-d="{{actor.uuid}}" value="{{this.abilityList}}" collaborate="true" toggled="true">
-                {{!-- {{{lookup context (add "enrichedAbilityList" modifier=@index)}}} --}}
+                {{{(add "enrichedAbilityList" modifier=@index)}}}
               </prose-mirror>
-          {{!-- {{else}} {{{lookup context (add "enrichedAbilityList" modifier=@index)}}} --}}
+          {{else}} {{{(add "enrichedAbilityList" modifier=@index)}}}
           {{/if}}
         </div>
       {{/each}}
