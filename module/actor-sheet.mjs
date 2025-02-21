@@ -127,7 +127,6 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
             }
           );
           let enrichAbilityListName = "enrichedAbilityList" + i;
-          console.log("NAME: " + enrichAbilityListName)
           context[enrichAbilityListName] = await TextEditor.enrichHTML(
             this.actor.system.themebooks[enrichThemebookName].abilityList,
             {
