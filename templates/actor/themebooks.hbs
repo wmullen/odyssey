@@ -2,30 +2,83 @@
 <section class='tab themebooks {{tab.cssClass}}' data-group='primary' data-tab='themebooks'>
     <div class="flexcol">
       <div class='grid grid-2col'>
-        {{#each system.themebooks as |themebook key|}}
+
           <div class="flexcol">
-            <label for="system.themebooks.{{key}}.themebookName" class="resource-label">Themebook {{add @index modifier=1}}</label>
-            <input type='text' name='system.themebooks.{{key}}.themebookName' value='{{this.themebookName}}'/>
-            <label for="system.themebooks.{{key}}.basicMove" class="resource-label">Basic Move:</label>
-              {{!-- {{#if editable}} 
-                <prose-mirror name="system.themebooks.{{key}}.basicMove" data-document-u-u-i-d="{{actor.uuid}}" value="{{this.basicMove}}" collaborate="true" toggled="true">
-                  {{{lookup .. (concat "enrichedBasicMove" @index)}}}
+            <label for="system.themebooks.themebook0.themebookName" class="resource-label">Themebook 1</label>
+            <input type='text' name='system.themebooks.themebook0.themebookName' value='{{system.themebooks.themebook0.themebookName}}'/>
+            <label for="system.themebooks.themebook0.basicMove" class="resource-label">Basic Move:</label>
+              {{#if editable}} 
+                <prose-mirror name="system.themebooks.themebook0.basicMove" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.themebooks.themebook0.basicMove}}" collaborate="true" toggled="true">
+                  {{{enrichedBasicMove0}}}
                 </prose-mirror>
-            {{else}} {{{lookup .. (concat "enrichedBasicMove" @index)}}}
-            {{/if}} --}}
-            {{log "LOOK HERE"}}
-            {{log themebook.basicMove}}
-            {{log this.basicMove}}
-            {{editor themebook.basicMove target=(concat "enrichedBasicMove" @index) button=true engine="prosemirror" collaborate=true}}
-            <label for="system.themebooks.{{key}}.abilityList" class="resource-label">Abilities</label>
+            {{else}} {{{enrichedBasicMove0}}}
+            {{/if}}
+            <label for="system.themebooks.themebook0.abilityList" class="resource-label">Abilities</label>
             {{#if editable}} 
-                <prose-mirror name="system.themebooks.{{key}}.abilityList" data-document-u-u-i-d="{{actor.uuid}}" value="{{this.abilityList}}" collaborate="true" toggled="true">
-                  {{{concat "enrichedAbilityList" @index}}}
+                <prose-mirror name="system.themebooks.themebook0.abilityList" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.themebooks.themebook0.abilityList}}" collaborate="true" toggled="true">
+                  {{{enrichedAbilityList0}}}
                 </prose-mirror>
-            {{else}} {{{concat "enrichedAbilityList" @index}}}
+            {{else}} {{{enrichedAbilityList0}}}
             {{/if}}
           </div>
-        {{/each}}
+
+          <div class="flexcol">
+            <label for="system.themebooks.themebook1.themebookName" class="resource-label">Themebook 2</label>
+            <input type='text' name='system.themebooks.themebook1.themebookName' value='{{system.themebooks.themebook1.themebookName}}'/>
+            <label for="system.themebooks.themebook1.basicMove" class="resource-label">Basic Move:</label>
+              {{#if editable}} 
+                <prose-mirror name="system.themebooks.themebook1.basicMove" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.themebooks.themebook1.basicMove}}" collaborate="true" toggled="true">
+                  {{{enrichedBasicMove1}}}
+                </prose-mirror>
+            {{else}} {{{enrichedBasicMove1}}}
+            {{/if}}
+            <label for="system.themebooks.themebook1.abilityList" class="resource-label">Abilities</label>
+            {{#if editable}} 
+                <prose-mirror name="system.themebooks.themebook1.abilityList" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.themebooks.themebook1.abilityList}}" collaborate="true" toggled="true">
+                  {{{enrichedAbilityList1}}}
+                </prose-mirror>
+            {{else}} {{{enrichedAbilityList1}}}
+            {{/if}}
+          </div>
+
+          <div class="flexcol">
+            <label for="system.themebooks.themebook2.themebookName" class="resource-label">Themebook 3</label>
+            <input type='text' name='system.themebooks.themebook2.themebookName' value='{{system.themebooks.themebook2.themebookName}}'/>
+            <label for="system.themebooks.themebook2.basicMove" class="resource-label">Basic Move:</label>
+              {{#if editable}} 
+                <prose-mirror name="system.themebooks.themebook2.basicMove" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.themebooks.themebook2.basicMove}}" collaborate="true" toggled="true">
+                  {{{enrichedBasicMove2}}}
+                </prose-mirror>
+            {{else}} {{{enrichedBasicMove2}}}
+            {{/if}}
+            <label for="system.themebooks.themebook2.abilityList" class="resource-label">Abilities</label>
+            {{#if editable}} 
+                <prose-mirror name="system.themebooks.themebook2.abilityList" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.themebooks.themebook2.abilityList}}" collaborate="true" toggled="true">
+                  {{{enrichedAbilityList2}}}
+                </prose-mirror>
+            {{else}} {{{enrichedAbilityList2}}}
+            {{/if}}
+          </div>
+
+          <div class="flexcol">
+            <label for="system.themebooks.themebook3.themebookName" class="resource-label">Themebook 4</label>
+            <input type='text' name='system.themebooks.themebook3.themebookName' value='{{system.themebooks.themebook3.themebookName}}'/>
+            <label for="system.themebooks.themebook3.basicMove" class="resource-label">Basic Move:</label>
+              {{#if editable}} 
+                <prose-mirror name="system.themebooks.themebook3.basicMove" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.themebooks.themebook3.basicMove}}" collaborate="true" toggled="true">
+                  {{{enrichedBasicMove3}}}
+                </prose-mirror>
+            {{else}} {{{enrichedBasicMove3}}}
+            {{/if}}
+            <label for="system.themebooks.themebook3.abilityList" class="resource-label">Abilities</label>
+            {{#if editable}} 
+                <prose-mirror name="system.themebooks.themebook3.abilityList" data-document-u-u-i-d="{{actor.uuid}}" value="{{system.themebooks.themebook3.abilityList}}" collaborate="true" toggled="true">
+                  {{{enrichedAbilityList3}}}
+                </prose-mirror>
+            {{else}} {{{enrichedAbilityList3}}}
+            {{/if}}
+          </div>
+
       </div>
       <div class="flexcol">
         <label>Signature Move</label>
