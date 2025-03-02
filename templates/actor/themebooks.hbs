@@ -7,18 +7,22 @@
             <label for="system.themebooks.{{key}}.themebookName" class="resource-label">Themebook {{add @index modifier=1}}</label>
             <input type='text' name='system.themebooks.{{key}}.themebookName' value='{{this.themebookName}}'/>
             <label for="system.themebooks.{{key}}.basicMove" class="resource-label">Basic Move:</label>
-              {{#if editable}} 
+              {{!-- {{#if editable}} 
                 <prose-mirror name="system.themebooks.{{key}}.basicMove" data-document-u-u-i-d="{{actor.uuid}}" value="{{this.basicMove}}" collaborate="true" toggled="true">
-                  {{lookup . (add "enrichedBasicMove" modifier=@index)}}
+                  {{{lookup .. (concat "enrichedBasicMove" @index)}}}
                 </prose-mirror>
-            {{else}} {{lookup . (add "enrichedBasicMove" modifier=@index)}}
-            {{/if}}
+            {{else}} {{{lookup .. (concat "enrichedBasicMove" @index)}}}
+            {{/if}} --}}
+            {{log "LOOK HERE"}}
+            {{log themebook.basicMove}}
+            {{log this.basicMove}}
+            {{editor themebook.basicMove target=(concat "enrichedBasicMove" @index) button=true engine="prosemirror" collaborate=true}}
             <label for="system.themebooks.{{key}}.abilityList" class="resource-label">Abilities</label>
             {{#if editable}} 
                 <prose-mirror name="system.themebooks.{{key}}.abilityList" data-document-u-u-i-d="{{actor.uuid}}" value="{{this.abilityList}}" collaborate="true" toggled="true">
-                  {{lookup . (add "enrichedAbilityList" modifier=@index)}}
+                  {{{concat "enrichedAbilityList" @index}}}
                 </prose-mirror>
-            {{else}} {{lookup . (add "enrichedAbilityList" modifier=@index)}}
+            {{else}} {{{concat "enrichedAbilityList" @index}}}
             {{/if}}
           </div>
         {{/each}}
