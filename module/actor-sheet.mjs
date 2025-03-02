@@ -110,15 +110,12 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
 
   /** @override */
   async _preparePartContext(partId, context) {
-    console.log("CONTEXT: ");
-        console.log(context);
     switch (partId) {
       case 'themebooks':
+        context.tab = context.tabs[partId];
         for (var i = 0; i < Object.keys(this.actor.system.themebooks).length; i++) {
           let enrichThemebookName = "themebook" + i;
           let enrichBasicMoveName = "enrichedBasicMove" + i;
-          console.log("THEMEBOOK: " + enrichThemebookName);
-          console.log("BASIC MOVE NAME: " + enrichBasicMoveName);
           context[enrichBasicMoveName] = await TextEditor.enrichHTML(
             this.actor.system.themebooks[enrichThemebookName].basicMove,
             {
@@ -131,7 +128,6 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
             }
           );
           let enrichAbilityListName = "enrichedAbilityList" + i;
-          console.log("ABILITY NAME: " + enrichAbilityListName);
           context[enrichAbilityListName] = await TextEditor.enrichHTML(
             this.actor.system.themebooks[enrichThemebookName].abilityList,
             {
@@ -143,10 +139,6 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
               relativeTo: this.actor,
             }
           );
-          console.log("BASIC MOVE: ");
-          console.log(context[enrichBasicMoveName]);
-          console.log("ABILITY LIST: ");
-          console.log(context[enrichAbilityListName]);
         }
         
         context.enrichedSignatureOngoing = await TextEditor.enrichHTML(
@@ -285,7 +277,7 @@ export class OdysseyActorSheet extends api.HandlebarsApplicationMixin(
           return tabs;
         case 'themebooks':
           tab.id = 'themebooks';
-          tab.label += 'Themebooks';
+          tab.label += 'Themebooks and Signature';
           break;
         case 'items':
           tab.id = 'items';
